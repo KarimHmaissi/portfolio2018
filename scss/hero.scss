@@ -1,0 +1,69 @@
+.hero {
+	height: 100vh;
+	color: white;
+	background: url(waves.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+.hero__overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,.3);
+	transition: background 2s ease-in-out;
+
+}
+
+.video-loaded .hero__overlay {
+	background: rgba(0,0,0,0);
+}
+
+.hero__content {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	padding: 0 80px;
+	margin-bottom: 80px;
+}
+
+.hero__title {
+	margin-bottom: 80px;
+}
+
+.hero__video {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+}
+
+@media screen and (max-width: 1024px) {
+
+}
+
+@media screen and (max-width: 720px) {
+	.portfolio__item--featured {
+		padding: 0 10px;
+	}
+
+	.hero,
+	.hero__overlay,
+	.hero__video  {
+		height: 90vh;
+	}
+
+	.hero__content {
+		padding: 0 20px;
+		margin-bottom: 40px;
+	}
+}
+
+@media screen and (max-device-width: 420px) {
+
+}

@@ -1,0 +1,23 @@
+.contact {
+	text-align: center;
+	margin: 0 auto;
+	padding: 80px 0;
+}
+
+.contact__description {
+	font-weight: 400;
+	font-size: 120%;
+
+	a {
+		font-weight: 700;
+		text-decoration: underline;
+	}
+}
+
+
+.contact__copyright {
+	font-weight: 300;
+	text-align: center;
+	padding-top: 60px;
+	padding-bottom: 20px;
+}

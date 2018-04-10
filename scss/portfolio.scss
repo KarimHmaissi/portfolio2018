@@ -1,0 +1,152 @@
+
+.portfolio {
+
+}
+
+.portfolio__item {
+
+	.container {
+		display: flex;
+		flex-direction: row;
+		align-items: flex-end;
+		min-height: 500px;
+	}
+}
+
+.portfolio__content {
+	max-width: 440px;
+	margin-bottom: 100px;
+	margin-right: 100px;
+
+	.portfolio__title {
+
+	}
+
+	.portfolio__description {
+		font-weight: 300;
+	}
+}
+
+.portfolio__tags {
+	display: inline;
+	list-style: none;
+	margin-left: 0;
+	padding-left: 0;
+	margin-bottom: 10px;
+
+	.portfolio__tag {
+		display: inline;
+		margin-right: 30px;
+		font-size: 0.8rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 1.2px;
+	}
+}
+
+
+.portfolio__browser-wrapper {
+	max-width: 800px;
+
+	img {
+		height: auto;
+		display: block;
+		width: 100%;
+	}
+}
+
+
+.portfolio__item--featured {
+	flex-direction: column;
+
+	.portfolio__content {
+		margin: 0 auto;
+		padding-top: 80px;
+	}
+
+	.portfolio__browser-wrapper {
+		max-width: 800px;
+		margin: 0 auto;
+		margin-top: 80px;
+	}
+}
+
+.portfolio__item--white {
+	background-color: #f8f8f8;
+
+	.button,
+	button {
+		color: #404040;
+		font-weight: bold;
+		text-transform: none;
+	}
+
+	.portfolio__title {
+		color: #404040;
+	}
+
+	.portfolio__description {
+		color: rgba(64,64,64, 76);
+		font-weight: 300;
+	}
+
+	.portfolio__tag {
+		color: rgba(0,0,0,0.6);
+	}
+}
+
+.portfolio__item--dark {
+	.portfolio__tag,
+	.portfolio__description {
+		color: rgba(255,255,255, .76);
+	}
+}
+
+
+@media screen and (max-width: 1024px) {
+	.portfolio {
+		margin-bottom: 60px;
+	}
+
+	.portfolio__item .container {
+	    display: flex;
+	    flex-direction: column;
+	    align-items: flex-start;
+	    min-height: auto;
+	}
+
+	.portfolio__item--featured {
+		padding: 0 20px;
+	}
+
+	.portfolio__content {
+	    max-width: 100%;
+	    margin-top: 60px;
+	    margin-bottom: 60px;
+	    margin-right: 0;
+		padding: 0 20px;
+	}
+
+	.portfolio__browser-wrapper {
+    	max-width: 800px;
+    	display: block;
+    	width: 100%;
+
+		img {
+			width: 100%;
+			vertical-align: bottom;
+		}
+	}
+}
+
+@media screen and (max-width: 720px) {
+	.portfolio__item--featured .portfolio__content {
+		padding-top: 60px;
+	}
+
+
+}
+
+@media screen and (max-width: 420px) {
+
+}
