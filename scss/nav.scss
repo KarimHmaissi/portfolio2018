@@ -6,8 +6,18 @@ nav {
 	z-index: 9;
 	display: flex;
 	flex-direction: row;
-	padding: 0 80px;
-	padding-top: 40px;
+	padding: 40px 80px;
+}
+
+.navStick nav {
+	position: fixed;
+	padding: 0;
+    padding-right: 60px;
+    background: #141414;
+
+	.logo {
+		height: 100%;
+	}
 }
 
 .logo {
@@ -28,19 +38,19 @@ nav {
 	padding-left: 0;
 	margin-left: 0;
 	margin-right: 40px;
-	color: white;
-	font-size: 15px;
-	font-weight: 700;
 	cursor: pointer;
-	// border-bottom-color: transparent;
-	// border-bottom-width: 1px;
-	// border-bottom-style: solid;
-	transition: color 0.25s ease-in-out,
-				border 0.25s ease-in-out;
 
-	&:hover {
+	a {
+		color: white;
+		font-size: 15px;
+		font-weight: 700;
+		text-decoration: none;
+		transition: color 0.25s ease-in-out,
+		border 0.25s ease-in-out;
+	}
+
+	&:hover a {
 		color: #D0021B;
-		// border-bottom-color: #D0021B;
 	}
 
 	&:last-child {

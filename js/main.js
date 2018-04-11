@@ -8,6 +8,16 @@ var Karim = (function () {
 	var init = function () {
 		console.log('Running Karim!');
 		initWaypoints();
+		initImages();
+	};
+
+	var initImages = function () {
+		var hero = document.querySelector('#hero');
+		if(hero) {
+			imagesLoaded(hero, function () {
+				hero.className += ' ' + 'imagesLoaded';
+			});
+		}
 	};
 
 	var initWaypoints = function () {
@@ -26,7 +36,8 @@ var Karim = (function () {
 
 		var navWaypoint = new Waypoint({
 			element: document.getElementById('portfolio'),
-			handler: navChange
+			handler: navChange,
+			offset: 40
 		});
 
 	};
