@@ -109,23 +109,7 @@ var Karim = (function () {
 				var video = videos[i];
 				this.switchSrc(video);
 
-
 				var container = video.parentNode.parentNode.parentNode;
-				console.log(container);
-				// video.addEventListener('mouseover', function() {
-				// 	//LOOP over all containers and remove class
-				// 	var portfolioItems = document.querySelectorAll('.portfolio__item');
-				// 	for(var x = 0; x < portfolioItems.length; x++) {
-				// 		removeClass(portfolioItems[x], 'videoStarted');
-				// 	}
-                //
-				// 	stopAllVideos();
-				// 	container.className += ' ' + 'videoStarted';
-				// 	video.play();
-				// });
-				// video.addEventListener('mouseout', function() {
-				// 	console.log('mouseout');
-				// });
 				createWaypoint(video, container);
 			}
 		},
