@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="GB">
+<html class="no-js" lang="en-gb">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -10,7 +10,6 @@
         <link rel="manifest" href="site.webmanifest">
         <link rel="apple-touch-icon" href="icon.png">
 
-        <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/index.css">
 
         <script>
@@ -35,7 +34,7 @@
                 <a href="/"><img class="logo" src="images/logo.png" alt="kh"></a>
             </div>
             <ul class="nav-items">
-                <li class="nav-items__item"><a href="#work">Work</a></li>
+                <li class="nav-items__item"><a href="#portfolio">Work</a></li>
                 <li class="nav-items__item"><a href="#about">About</a></li>
                 <li class="nav-items__item"><a href="#contact">Contact</a></li>
                 <li class="nav-items__item"><a href="#">CV</a></li>
@@ -54,7 +53,7 @@
                     }, false);
                 </script>
             </video> -->
-			<img class="hero__video" src="images/waves.jpg">
+			<img class="hero__video asyncImage" data-src="images/wavesM.jpg">
             <div class="hero__overlay">
                 <div class="container">
                     <div class="hero__content">
@@ -72,17 +71,36 @@
                         <li class="portfolio__tag">Part of a team</li>
                         <li class="portfolio__tag">Frontend</li>
                     </ul>
-                    <h2 class="portfolio__title">Landrover.com</h2>
+                    <h2 class="portfolio__title">Jaguar.com</h2>
                     <p class="portfolio__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias delectus architecto eos corporis a accusamus ullam tempora voluptates modi commodi, adipisci in quas unde, sequi incidunt sunt. Soluta, similique, odio.</p>
-                    <a class="button" href="http://landrover.com">Visit site</a>
+                    <a class="button" href="http://jaguar.com">Visit site</a>
                 </div>
 
                 <div class="portfolio__browser-wrapper">
-                    <img class="portfolio__browser" src="images/browser.png" alt="">
-                    <img class="portfolio__gif" src="images/lotus.gif" alt="">
+					<video class="portfolio__gif asyncVideo" data-src="images/jaguar.mp4" loop>
                 </div>
 
             </div>
+
+			<!-- <div class="portfolio__item portfolio__item--white">
+                <div class="container">
+                    <div class="portfolio__content">
+                        <ul class="portfolio__tags">
+                            <li class="portfolio__tag">Part of a team</li>
+                            <li class="portfolio__tag">Frontend</li>
+                        </ul>
+                        <h2 class="portfolio__title">Landrover.com</h2>
+                        <p class="portfolio__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias delectus architecto eos corporis a accusamus ullam tempora voluptates modi commodi, adipisci in quas unde, sequi incidunt sunt. Soluta, similique, odio.</p>
+                        <a class="button" href="http://landrover.com">Visit site</a>
+                    </div>
+
+                    <div class="portfolio__browser-wrapper">
+
+						<video class="portfolio__gif asyncVideo" data-src="images/landroverM.mp4" loop>
+                    </div>
+                </div>
+            </div> -->
+
             <div class="portfolio__item portfolio__item--dark">
                 <div class="container">
                     <div class="portfolio__content">
@@ -97,6 +115,8 @@
 
                     <div class="portfolio__browser-wrapper">
                         <img class="portfolio__browser" src="images/browser.png" alt="">
+						<!-- <video class="portfolio__gif asyncVideo" data-src="images/landroverM.mp4" loop> -->
+
                     </div>
                 </div>
             </div>
@@ -115,6 +135,7 @@
 
                     <div class="portfolio__browser-wrapper">
                         <img class="portfolio__browser" src="images/browser.png" alt="">
+						<!-- <video class="portfolio__gif asyncVideo" data-src="images/landroverM.mp4" loop> -->
                     </div>
                 </div>
             </div>
@@ -126,13 +147,33 @@
                             <li class="portfolio__tag">Part of a team</li>
                             <li class="portfolio__tag">Frontend</li>
                         </ul>
-                        <h2 class="portfolio__title">Landrover.com</h2>
+                        <h2 class="portfolio__title">N.I.D</h2>
                         <p class="portfolio__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias delectus architecto eos corporis a accusamus ullam tempora voluptates modi commodi, adipisci in quas unde, sequi incidunt sunt. Soluta, similique, odio.</p>
-                        <a class="button" href="http://landrover.com">Visit site</a>
+                        <a class="button" href="http://newinvestordaily.com/what-would-it-be-worth/">Visit site</a>
                     </div>
 
                     <div class="portfolio__browser-wrapper">
                         <img class="portfolio__browser" src="images/browser.png" alt="">
+						<!-- <video class="portfolio__gif asyncVideo" data-src="images/nid.mp4" loop> -->
+                    </div>
+                </div>
+            </div>
+
+			<div class="portfolio__item portfolio__item--white">
+                <div class="container">
+                    <div class="portfolio__content">
+                        <ul class="portfolio__tags">
+                            <li class="portfolio__tag">Part of a team</li>
+                            <li class="portfolio__tag">Frontend</li>
+                        </ul>
+                        <h2 class="portfolio__title">LOTUS</h2>
+                        <p class="portfolio__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias delectus architecto eos corporis a accusamus ullam tempora voluptates modi commodi, adipisci in quas unde, sequi incidunt sunt. Soluta, similique, odio.</p>
+                        <a class="button" href="http://www.lotuscars.com/">Visit site</a>
+                    </div>
+
+                    <div class="portfolio__browser-wrapper">
+                        <img class="portfolio__browser" src="images/browser.png" alt="">
+						<img class="portfolio__gif gif" src="images/lotus.gif" loop>
                     </div>
                 </div>
             </div>
@@ -140,7 +181,7 @@
         </section>
 
         <section id="about" class="about">
-			<img class="about__background" src="images/waves.jpg">
+			<img class="about__background asyncImage" data-src="images/office8.png">
 			<div class="about__overlay">
 				<div class="container">
 					<h2 class="about__title with-line">About</h2>

@@ -59,12 +59,15 @@
 }
 
 .portfolio__gif {
-	position: absolute;
-    top: 6.5%;
-    left: 0;
-    right: 0;
+	opacity: 0;
     width: 100%;
-    height: 98%;
+    height: auto;
+	display: block;
+	transition:: opacity 0.35s ease-in-out;
+}
+
+.active .portfolio__gif  {
+	opacity: 1;
 }
 
 
@@ -116,10 +119,6 @@
 
 
 @media screen and (max-width: 1024px) {
-	.portfolio {
-		margin-bottom: 60px;
-	}
-
 	.portfolio__item .container {
 	    display: flex;
 	    flex-direction: column;
@@ -129,6 +128,10 @@
 
 	.portfolio__item--featured {
 		padding: 0 20px;
+
+		.portfolio__browser-wrapper {
+			margin-top: 60px;
+		}
 	}
 
 	.portfolio__content {

@@ -9,17 +9,6 @@ nav {
 	padding: 40px 80px;
 }
 
-.navStick nav {
-	position: fixed;
-	padding: 0;
-    padding-right: 60px;
-    background: #141414;
-
-	.logo {
-		height: 100%;
-	}
-}
-
 .logo {
 	display: block;
 	width: 100%;
@@ -55,6 +44,22 @@ nav {
 
 	&:last-child {
 		margin-right: 0;
+	}
+}
+
+.navStick nav {
+	position: fixed;
+	padding: 0;
+    padding-right: 60px;
+    background: #141414;
+
+	a {
+		font-size: 14px;
+		font-weight: 400;
+	}
+
+	.logo {
+		height: 100%;
 	}
 }
 
