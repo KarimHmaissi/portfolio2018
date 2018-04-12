@@ -7,6 +7,13 @@ function hasClass(ele, cls) {
 	return new RegExp('(^| )' + cls + '( |$)', 'gi').test(ele.className);
 }
 
+//Returns ele as part of siblings
+function getSiblings(ele) {
+	return Array.prototype.filter.call(ele.parentNode.children, function(child){
+	  return child;
+	});
+}
+
 var Karim = (function () {
 
 	return {
@@ -45,17 +52,50 @@ var Karim = (function () {
 					videos[x].currentTime = 0;
 					videos[x].pause();
 				}
+			};
+
+			var removeAllClasses = function() {
+				// remove all classes
+				var portfolioItems = document.querySelectorAll('.portfolio__item');
+				for(var x = 0; x < portfolioItems.length; x++) {
+					removeClass(portfolioItems[x], 'videoActive');
+				}
 			}
 
 			var createWaypoint = function (video, container) {
 				new Waypoint({
 					element: container,
 					handler: function (direction) {
-						console.log(video);
 						if(direction === 'up') {
+							//remove all classes
+							removeAllClasses();
 							stopAllVideos();
+
+							//start the video above this one??
+							var index = -1;
+							var sibs = getSiblings(container);
+							for(var n = 0; n < sibs.length; n++) {
+								if(sibs[n] === container) {
+									index = n;
+								}
+							}
+
+							if(index && index !== 0) {
+								sibs[index - 1].className += ' ' + 'videoActive';
+								//start video?
+								var previousVideo = sibs[index - 1].querySelectorAll('video')[0];
+								previousVideo.play();
+							}
+
 						} else {
+
 							stopAllVideos();
+							removeAllClasses();
+
+							//if doesnt have class add it
+							if(!hasClass(container, 'videoActive')) {
+								container.className += ' ' + 'videoActive';
+							}
 
 							video.play();
 						}
@@ -71,6 +111,7 @@ var Karim = (function () {
 
 
 				var container = video.parentNode.parentNode.parentNode;
+				console.log(container);
 				// video.addEventListener('mouseover', function() {
 				// 	//LOOP over all containers and remove class
 				// 	var portfolioItems = document.querySelectorAll('.portfolio__item');

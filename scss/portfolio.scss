@@ -58,32 +58,55 @@
 	}
 }
 
+.portfolio__browser {
+	opacity: 1;
+	transition: opacity 0.35s ease-in-out;
+}
+
 .portfolio__gif {
 	opacity: 0;
     width: 100%;
     height: auto;
 	display: block;
 	transition:: opacity 0.35s ease-in-out;
+
+	position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: block;
 }
 
-.active .portfolio__gif  {
+.videoActive .portfolio__browser {
+	opacity: 0;
+}
+.videoActive .portfolio__gif  {
 	opacity: 1;
 }
 
 
 .portfolio__item--featured {
-	flex-direction: column;
+	// flex-direction: column;
+
+ 	.container {
+    	flex-direction: column;
+    	align-items: center;
+	}
 
 	.portfolio__content {
-		margin: 0 auto;
-		padding-top: 80px;
+		margin: 80px auto;
 	}
 
-	.portfolio__browser-wrapper {
-		max-width: 800px;
-		margin: 0 auto;
-		margin-top: 80px;
-	}
+	// .portfolio__content {
+	// 	// margin: 0 auto;
+	// 	padding-top: 80px;
+	// }
+    //
+	// .portfolio__browser-wrapper {
+	// 	// max-width: 800px;
+	// 	// margin: 0 auto;
+	// 	margin-top: 80px;
+	// }
 }
 
 .portfolio__item--white {
@@ -129,8 +152,8 @@
 	.portfolio__item--featured {
 		padding: 0 20px;
 
-		.portfolio__browser-wrapper {
-			margin-top: 60px;
+		.portfolio__content {
+			margin: 60px 0;
 		}
 	}
 
@@ -155,9 +178,6 @@
 }
 
 @media screen and (max-width: 720px) {
-	.portfolio__item--featured .portfolio__content {
-		padding-top: 60px;
-	}
 
 
 }
