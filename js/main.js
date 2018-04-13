@@ -59,7 +59,7 @@ var Karim = (function () {
 			var stopAllVideos = function () {
 				var x = 0;
 				for(x; x < length; x++) {
-					videos[x].currentTime = 0;
+					// videos[x].currentTime = 0;
 					videos[x].pause();
 				}
 			};
@@ -84,7 +84,7 @@ var Karim = (function () {
 					handler: function (direction) {
 						if(direction === 'up') {
 							//remove all classes
-							removeAllClasses();
+							// removeAllClasses();
 							stopAllVideos();
 
 							//start the video above this one??
@@ -106,12 +106,12 @@ var Karim = (function () {
 						} else {
 
 							stopAllVideos();
-							removeAllClasses();
+							// removeAllClasses();
 
 							//if doesnt have class add it
-							if(!hasClass(container, 'videoActive')) {
-								container.className += ' ' + 'videoActive';
-							}
+							// if(!hasClass(container, 'videoActive')) {
+							// 	container.className += ' ' + 'videoActive';
+							// }
 
 							playVideo(video);
 						}
