@@ -14,6 +14,16 @@ function getSiblings(ele) {
 	});
 }
 
+function getWidth() {
+  return Math.max(
+    document.body.scrollWidth,
+    document.documentElement.scrollWidth,
+    document.body.offsetWidth,
+    document.documentElement.offsetWidth,
+    document.documentElement.clientWidth
+  );
+}
+
 var Karim = (function () {
 
 	return {
@@ -60,7 +70,13 @@ var Karim = (function () {
 				for(var x = 0; x < portfolioItems.length; x++) {
 					removeClass(portfolioItems[x], 'videoActive');
 				}
-			}
+			};
+
+			var playVideo = function(video) {
+				if(getWidth() > 720) {
+					video.play();
+				}
+			};
 
 			var createWaypoint = function (video, container) {
 				new Waypoint({
@@ -84,7 +100,7 @@ var Karim = (function () {
 								sibs[index - 1].className += ' ' + 'videoActive';
 								//start video?
 								var previousVideo = sibs[index - 1].querySelectorAll('video')[0];
-								previousVideo.play();
+								playVideo(previousVideo);
 							}
 
 						} else {
@@ -97,7 +113,7 @@ var Karim = (function () {
 								container.className += ' ' + 'videoActive';
 							}
 
-							video.play();
+							playVideo(video);
 						}
 					},
 					offset: '20%'

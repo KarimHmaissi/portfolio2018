@@ -623,14 +623,15 @@ nav {
   opacity: 1;
   transition: opacity 0.35s ease-in-out; }
 
-.portfolio__gif {
+.portfolio__gif,
+.portfolio__static {
   opacity: 0;
   width: 100%;
   height: auto;
   display: block;
   transition: opacity 0.35s ease-in-out;
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
   width: 100%;
   display: block; }
@@ -696,6 +697,12 @@ nav {
     .portfolio__browser-wrapper img {
       width: 100%;
       vertical-align: bottom; } }
+
+@media screen and (max-width: 720px) {
+  .videoActive .portfolio__gif {
+    opacity: 0; }
+  .videoActive .portfolio__static {
+    opacity: 1; } }
 
 .about {
   min-height: 700px;
