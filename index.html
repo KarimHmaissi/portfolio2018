@@ -11,8 +11,15 @@
         <link rel="apple-touch-icon" href="icon.png">
 
 		<style>
-			html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}nav,section{display:block}h1{font-size:2em;margin:0.67em 0}a{background-color:transparent;-webkit-text-decoration-skip:objects}img{border-style:none}button{font-family:sans-serif;font-size:100%;line-height:1.15;margin:0}button{overflow:visible}button{text-transform:none}button{-webkit-appearance:button}button::-moz-focus-inner{border-style:none;padding:0}button:-moz-focusring{outline:1px dotted ButtonText}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}*,*:after,*:before{box-sizing:border-box}html{background:#101010;color:#f8f8f8;font-size:14px;font-family:"proxima-nova",sans-serif;line-height:1.7}body{min-height:3000px}.container{margin:0 100px}button{min-width:125px;display:inline-block;color:white;background:transparent;padding:10px 20px;border:2px solid #D0021B;text-transform:uppercase;font-size:0.8rem;border-radius:3px;text-decoration:none;text-align:center}a{color:#D0021B}h1{font-size:4rem;line-height:4rem;font-weight:700;margin-top:0.1rem;margin-bottom:0.2rem}.red{color:#D0021B}@media screen and (max-width:720px){.container{margin:0 20px}h1{font-size:3rem;line-height:3rem}}nav{position:absolute;top:0;left:0;width:100%;z-index:9;display:flex;flex-direction:row;padding:40px 80px}.logo{display:block;width:100%;height:auto;max-width:50px}.nav-items{display:block;list-style:none;margin-left:auto}.nav-items__item{display:inline-block;padding-left:0;margin-left:0;margin-right:40px}.nav-items__item a{color:white;font-size:15px;font-weight:700;text-decoration:none}.nav-items__item:last-child{margin-right:0}@media screen and (max-width:720px){nav{padding:0 20px;padding-top:20px}.nav-items{display:none}.nav-items__item{font-size:14px}.logo{max-width:50px;min-width:50px}}.hero{height:100vh;color:white}.hero__overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:black}.hero__content{position:absolute;bottom:0;left:0;padding:0 80px;margin-bottom:80px}.hero__title{margin-bottom:80px}.hero__video{position:absolute;top:0;left:0;height:100%;width:100%;object-fit:cover}@media screen and (max-width:720px){.hero,.hero__overlay,.hero__video{height:90vh}.hero__content{padding:0 20px;margin-bottom:40px}}
+		body,button{margin:0}.logo,nav{width:100%}.nav-items__item a,button{text-decoration:none;color:#fff}html{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100% background: #101010;color:#f8f8f8;font-size:14px;font-family:proxima-nova,sans-serif;line-height:1.7}nav,section{display:block}h1{margin:.67em 0}a{background-color:transparent;-webkit-text-decoration-skip:objects;color:#D0021B}img{border-style:none}button{font-family:sans-serif;line-height:1.15;overflow:visible;-webkit-appearance:button;min-width:125px;display:inline-block;background:0 0;padding:10px 20px;border:2px solid #D0021B;text-transform:uppercase;font-size:.8rem;border-radius:3px;text-align:center}*,:after,:before{box-sizing:border-box}.container{margin:0 100px}h1{font-size:4rem;line-height:4rem;font-weight:700;margin-top:.1rem;margin-bottom:.2rem}@media screen and (max-width:720px){.container{margin:0 20px}h1{font-size:3rem;line-height:3rem}}.hero__content,.hero__title{margin-bottom:80px}nav{position:absolute;top:0;left:0;z-index:9;display:flex;flex-direction:row;padding:40px 80px}.logo{display:block;height:auto;max-width:50px}.nav-items{display:block;list-style:none;margin-left:auto}.nav-items__item{display:inline-block;padding-left:0;margin-left:0;margin-right:40px}.nav-items__item a{font-size:15px;font-weight:700}.nav-items__item:last-child{margin-right:0}@media screen and (max-width:720px){nav{padding:20px 20px 0}.nav-items{display:none}.nav-items__item{font-size:14px}.logo{max-width:50px;min-width:50px}}.hero{height:100vh;color:#fff}.hero__overlay,.hero__video{position:absolute;top:0;left:0;height:100%;width:100%}.hero__overlay{background:#000}.hero__content{position:absolute;bottom:0;left:0;padding:0 80px}.hero__video{object-fit:cover}@media screen and (max-width:720px){.hero,.hero__overlay,.hero__video{height:90vh}.hero__content{padding:0 20px;margin-bottom:40px}}
 		</style>
+
+		<link rel="preload" href="/css/index.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+		<noscript><link rel="stylesheet" href="/css/index.css"></noscript>
+		<script>
+		/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+		!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+		</script>
 
         <script>
           (function(d) {
@@ -214,23 +221,6 @@
                 </p>
             </div>
         </section>
-
-		<noscript id="deferred-styles">
-	      <link rel="stylesheet" type="text/css" href="/css/index.css"/>
-	    </noscript>
-	    <script>
-	      var loadDeferredStyles = function() {
-	        var addStylesNode = document.getElementById("deferred-styles");
-	        var replacement = document.createElement("div");
-	        replacement.innerHTML = addStylesNode.textContent;
-	        document.body.appendChild(replacement)
-	        addStylesNode.parentElement.removeChild(addStylesNode);
-	      };
-	      var raf = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
-	          window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
-	      if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
-	      else window.addEventListener('load', loadDeferredStyles);
-	    </script>
 
         <script src="js/vendor/imagesLoaded.min.js"></script>
         <script src="js/vendor/waypoints.min.js"></script>
