@@ -116,7 +116,7 @@ var Karim = (function () {
 							playVideo(video);
 						}
 					},
-					offset: '20%'
+					offset: '30%'
 				});
 			};
 
@@ -148,10 +148,20 @@ var Karim = (function () {
 			});
 		},
 
+		initSmoothScroll: function() {
+			var options = {
+				speed: 500, // Integer. How fast to complete the scroll in milliseconds
+				offset: 50, // Integer or Function returning an integer. How far to offset the scrolling anchor location in pixels
+				easing: 'easeInOutCubic' // Easing pattern to use
+			}
+			var scroll = new SmoothScroll('a[href*="#"]', options);
+		},
+
 		init: function() {
 			this.initNavigation();
 			this.initImages();
 			this.initVideos();
+			this.initSmoothScroll();
 		}
 	};
 })();
