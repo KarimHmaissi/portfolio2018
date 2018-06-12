@@ -1,28 +1,57 @@
-function removeClass(ele,cls) {
-   var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
-   ele.className = ele.className.replace(reg,' ');
-}
+'use strict';
 
-function hasClass(ele, cls) {
-	return new RegExp('(^| )' + cls + '( |$)', 'gi').test(ele.className);
-}
+// function removeClass(ele,cls) {
+//    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+//    ele.className = ele.className.replace(reg,' ');
+// }
+//
+// function hasClass(ele, cls) {
+// 	return new RegExp('(^| )' + cls + '( |$)', 'gi').test(ele.className);
+// }
+//
+// //Returns ele as part of siblings
+// function getSiblings(ele) {
+// 	return Array.prototype.filter.call(ele.parentNode.children, function(child){
+// 	  return child;
+// 	});
+// }
+//
+// function getWidth() {
+//   return Math.max(
+//     document.body.scrollWidth,
+//     document.documentElement.scrollWidth,
+//     document.body.offsetWidth,
+//     document.documentElement.offsetWidth,
+//     document.documentElement.clientWidth
+//   );
+// }
 
-//Returns ele as part of siblings
-function getSiblings(ele) {
-	return Array.prototype.filter.call(ele.parentNode.children, function(child){
-	  return child;
-	});
-}
+var util = {
+	removeClass: function(ele,cls) {
+	   var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+	   ele.className = ele.className.replace(reg,' ');
+   },
 
-function getWidth() {
-  return Math.max(
-    document.body.scrollWidth,
-    document.documentElement.scrollWidth,
-    document.body.offsetWidth,
-    document.documentElement.offsetWidth,
-    document.documentElement.clientWidth
-  );
-}
+	hasClass: function(ele, cls) {
+		return new RegExp('(^| )' + cls + '( |$)', 'gi').test(ele.className);
+	},
+
+	getSiblings: function(ele) {
+		return Array.prototype.filter.call(ele.parentNode.children, function(child){
+	  		return child;
+		});
+	},
+
+	getWidth: function() {
+	  return Math.max(
+	    document.body.scrollWidth,
+	    document.documentElement.scrollWidth,
+	    document.body.offsetWidth,
+	    document.documentElement.offsetWidth,
+	    document.documentElement.clientWidth
+	  );
+	}
+};
 
 var Karim = (function () {
 
@@ -53,7 +82,6 @@ var Karim = (function () {
 
 		initVideos: function() {
 			var videos = document.querySelectorAll('.asyncVideo');
-			var i = 0;
 			var length = videos.length;
 
 			var stopAllVideos = function () {
@@ -68,12 +96,12 @@ var Karim = (function () {
 				// remove all classes
 				var portfolioItems = document.querySelectorAll('.portfolio__item');
 				for(var x = 0; x < portfolioItems.length; x++) {
-					removeClass(portfolioItems[x], 'videoActive');
+					util.removeClass(portfolioItems[x], 'videoActive');
 				}
 			};
 
 			var playVideo = function(video) {
-				if(getWidth() > 720) {
+				if(video && util.getWidth() > 720) {
 					video.play();
 				}
 			};
@@ -89,7 +117,7 @@ var Karim = (function () {
 
 							//start the video above this one??
 							var index = -1;
-							var sibs = getSiblings(container);
+							var sibs = util.getSiblings(container);
 							for(var n = 0; n < sibs.length; n++) {
 								if(sibs[n] === container) {
 									index = n;
@@ -120,6 +148,8 @@ var Karim = (function () {
 				});
 			};
 
+			var i = 0;
+
 			//each video add handler and init with src change
 			for(i; i < length; i++) {
 				var video = videos[i];
@@ -135,7 +165,7 @@ var Karim = (function () {
 
 			var navChange = function (direction) {
 				if(direction === 'up') {
-					removeClass(body, 'navStick');
+					util.removeClass(body, 'navStick');
 				} else {
 					body.className += ' ' + 'navStick';
 				}
@@ -157,11 +187,33 @@ var Karim = (function () {
 			var scroll = new SmoothScroll('a[href*="#"]', options);
 		},
 
+		initSlick: function() {
+			var slider = new Siema({
+			  selector: '.js-slide',
+			  duration: 200,
+			  easing: 'ease-out',
+			  perPage: 5,
+			  startIndex: 0,
+			  draggable: true,
+			  multipleDrag: true,
+			  threshold: 20,
+			  loop: true,
+			  onInit: () => {},
+			  onChange: () => {}
+			});
+
+			setInterval(function () {
+				slider.next(3);
+			}, 2000);
+
+		},
+
 		init: function() {
 			this.initNavigation();
 			this.initImages();
 			this.initVideos();
 			this.initSmoothScroll();
+			// this.initSlick();
 		}
 	};
 })();
